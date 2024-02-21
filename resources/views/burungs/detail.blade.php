@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Cat Details</div>
+                <h1>Bird Details</h1>
 
                 <div class="card-body">
                     <!-- Display details about the dog using the $anjing variable -->
-                    <p>Name: {{ $kucing->nama }}</p>
-                    <p>Date of Birth: {{ $kucing->tanggal_lahir }}</p>
-                    <p>Weight: {{ $kucing->berat }}</p>
-                    <p>Color: {{ $kucing->warna }}</p>
-                    <p>Health Condition: {{ $kucing->kondisi_kesehatan }}</p>
-                    <p>Created at: {{ $kucing->created_at }}</p>
-                    <p>Updated at: {{ $kucing->updated_at }}</p>
+                    <p>Name: {{ $burung->nama }}</p>
+                    <p>Date of Birth: {{ $burung->tanggal_lahir }}</p>
+                    <p>Weight: {{ $burung->berat }}</p>
+                    <p>Color: {{ $burung->warna }}</p>
+                    <p>Health Condition: {{ $burung->kondisi_kesehatan }}</p>
+                    <p>Created at: {{ $burung->created_at }}</p>
+                    <p>Updated at: {{ $burung->updated_at }}</p>
                 
                     <!-- Add more details as needed -->
 

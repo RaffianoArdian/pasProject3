@@ -1,0 +1,64 @@
+h1{
+    text-align: center;
+}
+body{
+    background-color: gray;
+}
+table{
+    margin: auto;
+    background-color: whitesmoke;
+}
+
+.table-container form {
+    margin-left: 542px; /* Adjust this value as needed */
+    margin-bottom: 10px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: lightblue;
+}
+nav h2 {
+    margin: 0;
+    padding: 0;
+}
+nav .container-fluid {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Space items evenly along the main axis */
+}
+nav h2:last-child {
+    margin-left: 40px; /* Add left margin for spacing between headings */
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+.nav-links .nav-link:last-child {
+    margin-left: auto; /* Pushes the last link to the rightmost side */
+}
+.nav-link {
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+}
+
+
+
+/* Center the form vertically and horizontally */
+.container {
+    display: flex;
+    justify-content: center;
+    height: 100%; /* Ensure the container takes up the full height of the viewport */
+}
+
+/* Style the form */
+.form-container {
+    width: 400px; /* Adjust as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    height: 150px;
+}
