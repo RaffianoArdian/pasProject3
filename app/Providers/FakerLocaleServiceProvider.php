@@ -5,10 +5,10 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Faker\Factory as FakerFactory;
 
-class AppServiceProvider extends ServiceProvider
+class FakerLocaleServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      */
     public function register(): void
     {
@@ -16,11 +16,11 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      */
-    public function boot(): void
+    public function boot()
     {
         $fakerLocale = env('FAKER_LOCALE', 'en_US'); // Default to en_US if not set
-    FakerFactory::create($fakerLocale);
+        FakerFactory::create($fakerLocale);
     }
 }
