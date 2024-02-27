@@ -5,6 +5,7 @@ use App\Http\Controllers\DogsController;
 use App\Http\Controllers\BirdController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Kucing;
 
@@ -39,6 +40,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Auth::routes();
 

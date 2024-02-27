@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as FakerFactory;
+use App\Models\Kucing;
+use App\Models\Breed;
 use App\Models\User;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $fakerLocale = env('FAKER_LOCALE', 'id_ID'); // Default to en_US if not set
-        FakerFactory::create($fakerLocale);
-         \App\Models\User::factory(10)->create();
+         User::factory(10)->create();
+         Kucing::factory(20)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

@@ -8,38 +8,41 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-<div class="navbarr">
+<div class="navbar">
     <nav>
         <div class="user-name">
             @auth
                 <!-- Display the username if logged in -->
-                <h2>{{ $username }}</h2>
+                <h2>{{ Auth::user()->name }}</h2>
             @else
                 <!-- Display "Guest" if not logged in -->
                 <h2>Guest</h2>
             @endauth
         </div>
         <div class="container-fluid">
-            @if (Auth::check())
-                <div class="nav-links">
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
-
-<a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-    <h2>Logout</h2>
-</a>
-                </div>
-            @else
-                <div class="nav-links">
+            <div class="nav-links">
+                @auth
+                    <!-- Display dashboard link for logged-in users -->
+                    <a href="{{ route('dashboard') }}" class="nav-link">
+                        <h2>Dashboard</h2>
+                    </a>
+                    <!-- Logout form -->
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <h2>Logout</h2>
+                    </a>
+                @else
+                    <!-- Display login and register links for guests -->
                     <a href="{{ route('login') }}" class="nav-link">
                         <h2>Login</h2>
                     </a>
                     <a href="{{ route('register') }}" class="nav-link">
                         <h2>Register</h2>
                     </a>
-                </div>
-            @endif
+                @endauth
+            </div>
         </div>
     </nav>
 </div>

@@ -13,9 +13,8 @@ class CatsController extends Controller
 {
     $kucings = Kucing::with('breed')->get();
     $breeds = Breed::all();
-    $username = Auth::check() ? Auth::user()->name : null;
 
-    return view('cats.index', compact('kucings', 'breeds', 'username'));
+    return view('cats.index', compact('kucings', 'breeds'));
 }
 
     public function showDetail($id)
